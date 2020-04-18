@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="twilio-sendsms",
-    version="0.1.3",
+    version="0.1.4",
     author="Cormac O'Mahony",
     author_email="cormac@omahony.id.au",
     description="A utility for sending SMS using a mustache temlate",

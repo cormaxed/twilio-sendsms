@@ -1,6 +1,6 @@
 # twilio-sendsms
 
-A command-line tool for sending bulk sms using Twilio.
+A command-line tool for sending bulk SMS using Twilio.
 
 The utility lets you define a mustache template and provide a CSV file with matching columns for bulk SMS sends.
 
