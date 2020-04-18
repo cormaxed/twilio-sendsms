@@ -2,7 +2,7 @@
 
 A command-line tool for sending bulk sms using Twilio.
 
-The utility allows you define mustache template and provide a CSV file with matching columns for bulk sms sends.
+The utility lets you define a mustache template and provide a CSV file with matching columns for bulk SMS sends.
 
 ## Installation
 
@@ -14,19 +14,19 @@ python -m pip install twilio_sendsms
 
 ## Setup
 
-The first time you run, you will get prompted to provide your Twilio account details.
+The first time you run, you will be prompted to provide your Twilio account details.
 
 All configuration settings get stored in `~/.twilio-sendsms.config`. To reconfigure you can delete this file. 
 
 ## Running 
 
-First you need to define a mustach template and save to a file e.g. example.mustache:
+First, you need to define a mustache template and save to a file, e.g. example.mustache:
 
 ```
 Hi {{first_name}}, this is a test SMS. 
 ```
 
-Next you need to create a buld send CSV file. The file must have a `mobile_number` column. The mobile number must be in international format e.g. +614XXXXXXXX. The other columns names need to match the variable names used in the mustache template.
+Next, you need to create a bulk send CSV file. The file must have a `mobile_number` column. The mobile number must be in the international format, e.g. +614XXXXXXXX. The other column names need to match the variable names used in the mustache template.
 
 buld_send.csv
 ```
@@ -42,7 +42,7 @@ sendsms --template example.mustache test.csv
 
 ## Testing
 
-Before processing a bulk CVS file it's a good idea to sample some entries and send them to yourself first. This lets you confirm the formatting and check via the Twilio that the number of segments and costs are as expected.
+Before processing a bulk CVS file, it's a good idea to sample some entries and send them to yourself first. Testing is useful to confirm the formatting and the number of segments are as expected.
 
 To sample and override the mobile_number in the CSV file:
 
