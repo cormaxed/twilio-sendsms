@@ -31,7 +31,7 @@ Next, you need to create a bulk send CSV file. The file must have a `mobile_numb
 buld_send.csv
 ```
 "mobile_number","first_name"
-"+61405803106","Joe"
+"+614XXXXXXXX","Joe"
 ```
 
 To process the batch file:
