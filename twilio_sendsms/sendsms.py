@@ -3,7 +3,7 @@ import argparse
 import os
 from os.path import expanduser
 import configparser
-from PyInquirer import prompt
+from InquirerPy import prompt
 import pandas as pd
 import pystache
 from twilio.rest import Client
@@ -43,7 +43,7 @@ def read_config(force_update=False):
         config['twilio'] = config_twilio()
 
         print("Writing config to " + config_file)
-        with open(config_file, 'w') as configfile:
+        with open(config_file, 'w', encoding='utf-8') as configfile:
             config.write(configfile)
 
     return config
@@ -68,7 +68,7 @@ def run(conf, file, template, sample=None, sendto=None):
     parsed_template = None
 
     renderer = pystache.Renderer()
-    with open(template, 'r') as template_file:
+    with open(template, 'r', encoding='utf-8') as template_file:
         parsed_template = pystache.parse(template_file.read())
 
     # Extract keys from the template for validation against input file

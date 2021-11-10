@@ -11,7 +11,7 @@ all: default
 default: clean dev_deps deps format test lint build
 
 .venv:
-	if [ ! -e ".venv/bin/activate_this.py" ] ; then virtualenv -p python3 .venv ; fi
+	if [ ! -e ".venv/bin/activate_this.py" ] ; then virtualenv -p python3.10 .venv ; fi
 
 clean: clean-pyc clean-build
 
@@ -33,7 +33,7 @@ dev_deps: .venv
 setup: deps dev_deps
 
 format:
-	. .venv/bin/activate && autopep8 --in-place -r twilio_sendsms tests/
+	. .venv/bin/activate && autopep8 --in-place -r twilio_sendsms
 
 lint:
 	. .venv/bin/activate && pylint -r n twilio_sendsms
@@ -41,7 +41,7 @@ lint:
 test:
 	. .venv/bin/activate && python -m unittest discover
 
-build: format lint test
+build: format test
 
 dist: build
 	. .venv/bin/activate && python setup.py sdist	bdist_wheel
